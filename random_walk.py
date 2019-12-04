@@ -41,4 +41,7 @@ class RandomWalk():
             next_x = self.x_values[-1] + x_step
             next_y = self.y_values[-1] + y_step
 
+            """将下一次出现的位置添加至位置列表中"""
+            self.x_values.append(next_x)
+            self.y_values.append(next_y)
 
