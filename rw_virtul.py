@@ -1,10 +1,17 @@
 import matplotlib.pyplot as plt
 from random_walk import RandomWalk
 
-rw = RandomWalk()
+while 1:
+    rw = RandomWalk(num_point=50)
 
-rw.fill_walk()
+    rw.fill_walk()
 
-plt.scatter(rw.x_values,rw.y_values,s=5)
+    plt.plot(rw.x_values,rw.y_values)
 
-plt.show()
+    plt.show()
+
+    keep_moving = input()
+
+    if keep_moving == "n":
+        break
+

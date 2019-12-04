@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 from random import choice
-import random
 
 class RandomWalk():
 
@@ -15,23 +14,35 @@ class RandomWalk():
         self.x_values = [0]
         self.y_values = [0]
 
+    def get_step(self):
+        #direction = choice([1,-1])
+        #destance = choice([0, 1, 2, 3, 4])
+        #step = destance * direction
+        self.direction = choice([1,-1])
+        self.destance = choice([0, 1, 2, 3, 4])
+        self.step = self.direction * self.destance
+        return self.step
+
+
     def fill_walk(self):
         while len(self.x_values) < self.num_point:
 
             """定义横坐标移动的方向与横坐标每一次移动的跨度"""
-            x_direction = choice([1, -1])
-            x_destance = choice([0, 1, 2, 3, 4])
+            # x_direction = choice([1, -1])
+            # x_destance = choice([0, 1, 2, 3, 4])
 
             """定义横坐标下一步的位移"""
-            x_step = x_destance * x_direction
+            # x_step = x_destance * x_direction
 
+            x_step = self.get_step()
+            y_step = self.get_step()
 
             """定义纵坐标移动的方向与横坐标每一次移动的跨度"""
-            y_direction = choice([1, -1])
-            y_destance = choice([0, 1, 2, 3, 4])
+            # y_direction = choice([1, -1])
+            # y_destance = choice([0, 1, 2, 3, 4])
 
             """定义纵坐标下一步的位移"""
-            y_step = y_destance * y_direction
+            # y_step = y_destance * y_direction
 
             """当横坐标和纵坐标移动距离同时为零时，停止本次循环不执行本循环后面的语句，进入下一循环"""
             if x_step == 0 and y_step == 0:
